@@ -27,12 +27,17 @@ module.exports = {
                 break;
         }
 
-        if (vehicle.fuelType == 'diesel') {
-            rating = rating + 1;
+        switch (vehicle.fuelType) {
+            case 'diesel':
+                rating = rating + 1;
+                break;
+            case 'regular':
+                rating = rating - 1;
+                break;
+            default:
+                break;
         }
-        if (vehicle.fuelType == 'regular') {
-            rating = rating - 1;
-        }
+
         return rating;
-    }
+    },
 };
